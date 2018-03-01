@@ -1,15 +1,11 @@
 h1 {
     font-family: 'Roboto', sans-serif;
     margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-html,
-body {
-    height: 100%;
+    margin-bottom: 40px;
+    font-size: 4em;
 }
 
 body {
-    display: flex;
-    align-items: center;
+    margin-top: 10%;
+    margin-left: 10%;
 }

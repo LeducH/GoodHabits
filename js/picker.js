@@ -57,12 +57,18 @@ function hasOneDayPassed() {
 
 // some function which should run once a day
 function runOncePerDay() {
-    if (!hasOneDayPassed()) return false;
+    if (!hasOneDayPassed())
+
+        return false;
+
 
     // your code below
     var rand = getRandom(habits, 3);
 }
 runOncePerDay();
+
+
+var rand = getRandom(habits, 3);
 var htmlHabits = [
     "habit1",
     "habit2",
