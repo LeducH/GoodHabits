@@ -30,7 +30,8 @@ var habits = [
     "Drink lots of water",
     "Let go of what can't be changed",
     "Believe in yourself",
-    "Have a healthy sleeping pattern"
+    "Have a healthy sleeping pattern",
+    "Improve yourself each day a little"
 ];
 
 function getRandom(arr, n) {
