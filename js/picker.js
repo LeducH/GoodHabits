@@ -14,6 +14,7 @@ var habits = [
     "Be patient",
     "Make the most of now",
     "Judge less",
+    "Clean your rooms",
     "Exercise self-discipline",
     "Smile often",
     "Look on the bright side",
