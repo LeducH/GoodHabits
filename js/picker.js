@@ -48,30 +48,19 @@ function getRandom(arr, n) {
     return result;
 }
 
-function hasOneDayPassed() {
-    var date = new Date().toLocaleDateString();
 
-    if (localStorage.yourapp_date == date)
-        return false;
+var currentDate = new Date().getTime();
 
-    localStorage.yourapp_date = date;
-    return true;
-}
-
-// some function which should run once a day
-function runOncePerDay() {
-    if (!hasOneDayPassed())
-
-        return false;
-
-
-    // your code below
+if (currentDate - localStorage.getItem('timestamp') > 12 * 60 * 60 * 1000) {
+    localStorage.setItem('timestamp', new Date().getTime());
     var rand = getRandom(habits, 3);
+    localStorage.setItem('habits', rand);
+} else {
+    var habitsString = localStorage.getItem('habits');
+    var habitsLocalList = habitsString.split(',');
+    rand = habitsLocalList;
 }
-runOncePerDay();
 
-
-var rand = getRandom(habits, 3);
 var htmlHabits = [
     "habit1",
     "habit2",
