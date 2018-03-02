@@ -33,11 +33,7 @@ function setLocalHabits() {
 var intervalls = [0, 8, 16];
 var currentDate = new Date();
 var localTimestamp = new Date(parseInt(localStorage.getItem('timestamp')));
-var htmlHabits = [
-    "habit1",
-    "habit2",
-    "habit3"
-]
+var htmlHabits = ["habit1", "habit2", "habit3"];
 
 if (localStorage.getItem('timestamp') == null) {
     setLocalTime(currentDate);
@@ -50,11 +46,10 @@ if (localStorage.getItem('habits') == null) {
 if (currentDate.getTime() - localTimestamp.getTime() > 8 * 60 * 60 * 1000) {
     setLocalTime(currentDate);
     setLocalHabits();
-} else {
-    var habitsString = localStorage.getItem('habits');
-    var habitsLocalList = habitsString.split(',');
-    rand = habitsLocalList;
 }
+var habitsString = localStorage.getItem('habits');
+var habitsLocalList = habitsString.split(',');
+rand = habitsLocalList;
 
 
 for (var i = 0; i < htmlHabits.length; i++) {
