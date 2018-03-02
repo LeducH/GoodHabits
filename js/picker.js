@@ -49,6 +49,7 @@ if (localStorage.getItem('habits') == null) {
 
 if (currentDate.getTime() - localTimestamp.getTime() > 8 * 60 * 60 * 1000) {
     setLocalTime(currentDate);
+    setLocalHabits();
 } else {
     var habitsString = localStorage.getItem('habits');
     var habitsLocalList = habitsString.split(',');
