@@ -50,8 +50,10 @@ function getRandom(arr, n) {
 
 var currentDate = new Date().getTime();
 
-if (currentDate - localStorage.getItem('timestamp') > 12 * 60 * 60 * 1000) {
+
+if (currentDate - localStorage.getItem('timestamp') > 8 * 60 * 60 * 1000) {
     localStorage.setItem('timestamp', new Date().getTime());
+    localStorage.setItem('isReadyToChange', false);
     var rand = getRandom(habits, 3);
     localStorage.setItem('habits', rand);
 } else {
@@ -59,6 +61,7 @@ if (currentDate - localStorage.getItem('timestamp') > 12 * 60 * 60 * 1000) {
     var habitsLocalList = habitsString.split(',');
     rand = habitsLocalList;
 }
+
 
 var htmlHabits = [
     "habit1",
