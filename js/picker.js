@@ -19,15 +19,23 @@ function setTime(date, hour) {
     return date;
 }
 
-var intervalls = [0, 8, 16];
-var currentDate = new Date();
-var localTimestamp = new Date(parseInt(localStorage.getItem('timestamp')));
+function setLocalTime(date) {
 
-
-if (currentDate.getTime() - localTimestamp.getTime() > 8 * 60 * 60 * 1000) {
     var intervallIndex = Math.floor(currentDate.getHours() / 8);
     var newDate = setTime(currentDate, intervalls[intervallIndex]);
     localStorage.setItem('timestamp', newDate.getTime());
+}
+
+var intervalls = [0, 8, 16];
+var currentDate = new Date();
+var localTimestamp = new Date(parseInt(localStorage.getItem('timestamp')));
+if (localStorage.getItem('timestamp') == null) {
+    setLocalTime(currentDate);
+}
+
+
+if (currentDate.getTime() - localTimestamp.getTime() > 8 * 60 * 60 * 1000) {
+    setLocalTime(currentDate);
     var rand = getRandom(habits, 3);
     localStorage.setItem('habits', rand);
 } else {
