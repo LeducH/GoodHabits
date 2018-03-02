@@ -20,10 +20,14 @@ function setTime(date, hour) {
 }
 
 function setLocalTime(date) {
-
     var intervallIndex = Math.floor(currentDate.getHours() / 8);
     var newDate = setTime(currentDate, intervalls[intervallIndex]);
     localStorage.setItem('timestamp', newDate.getTime());
+}
+
+function setLocalHabits() {
+    var rand = getRandom(habits, 3);
+    localStorage.setItem('habits', rand);
 }
 
 var intervalls = [0, 8, 16];
@@ -35,15 +39,11 @@ if (localStorage.getItem('timestamp') == null) {
 }
 
 if (localStorage.getItem('habits') == null) {
-
-    var rand = getRandom(habits, 3);
-    localStorage.setItem('habits', rand);
+    setLocalHabits();
 }
 
 if (currentDate.getTime() - localTimestamp.getTime() > 8 * 60 * 60 * 1000) {
     setLocalTime(currentDate);
-    var rand = getRandom(habits, 3);
-    localStorage.setItem('habits', rand);
 } else {
     var habitsString = localStorage.getItem('habits');
     var habitsLocalList = habitsString.split(',');
