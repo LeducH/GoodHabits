@@ -29,10 +29,16 @@ function setLocalTime(date) {
 var intervalls = [0, 8, 16];
 var currentDate = new Date();
 var localTimestamp = new Date(parseInt(localStorage.getItem('timestamp')));
+
 if (localStorage.getItem('timestamp') == null) {
     setLocalTime(currentDate);
 }
 
+if (localStorage.getItem('habits') == null) {
+
+    var rand = getRandom(habits, 3);
+    localStorage.setItem('habits', rand);
+}
 
 if (currentDate.getTime() - localTimestamp.getTime() > 8 * 60 * 60 * 1000) {
     setLocalTime(currentDate);
