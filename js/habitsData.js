@@ -15,7 +15,7 @@ var habits = [
     "Judge less",
     "Clean your home",
     "Exercise self-discipline",
-    "Tell the truth – at least, don’t lie",
+    "Tell the truth – at least don’t lie",
     "Smile often",
     "Look on the bright side",
     "Love yourself",
