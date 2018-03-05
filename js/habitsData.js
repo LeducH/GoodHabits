@@ -6,6 +6,7 @@ var habits = [
     "Exercise",
     "Be honest with yourself",
     "Meditate",
+    "Focus on one task at the time",
     "Speak well of others",
     "Listen to understand",
     "Dream big",
