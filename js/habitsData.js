@@ -31,5 +31,6 @@ var habits = [
     "Let go of what can't be changed",
     "Believe in yourself",
     "Have a healthy sleeping pattern",
-    "Improve yourself each day a little from yesterday"
+    "Improve yourself each day a little from yesterday",
+    "Practice laughing"
 ];
